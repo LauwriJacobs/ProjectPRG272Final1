@@ -100,5 +100,28 @@ namespace ProjectPRG272Final1
             dgvAnimals.AutoGenerateColumns = false;
             dgvAnimals.DataSource = animal;
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            DataHandler handler = new DataHandler();
+            string animalID = txtUpID.Text.Trim();
+            string oldValue = txtOldValue.Text.Trim();
+            string newValue = txtNewValue.Text.Trim();
+
+            handler.UpdateAnimal(animalID, oldValue, newValue);
+
+            FileHandler fh = new FileHandler();
+            List<Animals> animal = fh.readAnimals();
+
+            // Ensure designer columns map to properties
+            dgvAnimals.AutoGenerateColumns = false;
+            dgvAnimals.DataSource = animal;
+
+            txtUpID.Clear();
+            txtOldValue.Clear();
+            txtNewValue.Clear();
+
+
+        }
     }
 }

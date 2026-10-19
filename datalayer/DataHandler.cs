@@ -30,9 +30,22 @@ namespace PRG272Group5PM.DataLayer
             MessageBox.Show("Data has been saved");
         }
 
-        public void UpdateAnimal()
+        public void UpdateAnimal(string animalid, string change, string newValue)
         {
 
+            string[] lines = File.ReadAllLines(path);
+
+            for(int i = 0; i < lines.Length; i++)
+            {
+                if (lines[i].Contains(animalid))
+                {
+                    lines[i] = lines[i].Replace(change, newValue);
+                    File.WriteAllLines(path, lines);
+                    MessageBox.Show("Data has been updated");
+                    return;
+                }
+            }
+            MessageBox.Show("Animal not found");
         }
 
 

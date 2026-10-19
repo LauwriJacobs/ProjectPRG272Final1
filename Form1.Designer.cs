@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUpID = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.dgvAnimals = new System.Windows.Forms.DataGridView();
@@ -51,16 +51,23 @@
             this.lblSpecies = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblAnimalID = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtOldValue = new System.Windows.Forms.TextBox();
+            this.txtNewValue = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnimals)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtUpID
             // 
-            this.textBox1.Location = new System.Drawing.Point(231, 309);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 17;
+            this.txtUpID.Location = new System.Drawing.Point(75, 19);
+            this.txtUpID.Name = "txtUpID";
+            this.txtUpID.Size = new System.Drawing.Size(100, 20);
+            this.txtUpID.TabIndex = 17;
             // 
             // btnDelete
             // 
@@ -79,6 +86,7 @@
             this.btnUpdate.TabIndex = 15;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // dgvAnimals
             // 
@@ -255,12 +263,68 @@
             this.lblAnimalID.TabIndex = 0;
             this.lblAnimalID.Text = "Animal ID:";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "AnimalID:";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtNewValue);
+            this.groupBox2.Controls.Add(this.txtOldValue);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.txtUpID);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Location = new System.Drawing.Point(144, 334);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 100);
+            this.groupBox2.TabIndex = 19;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Update";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 47);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Change:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 75);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(23, 13);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "To:";
+            // 
+            // txtOldValue
+            // 
+            this.txtOldValue.Location = new System.Drawing.Point(75, 47);
+            this.txtOldValue.Name = "txtOldValue";
+            this.txtOldValue.Size = new System.Drawing.Size(100, 20);
+            this.txtOldValue.TabIndex = 21;
+            // 
+            // txtNewValue
+            // 
+            this.txtNewValue.Location = new System.Drawing.Point(75, 72);
+            this.txtNewValue.Name = "txtNewValue";
+            this.txtNewValue.Size = new System.Drawing.Size(100, 20);
+            this.txtNewValue.TabIndex = 22;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1078, 450);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dgvAnimals);
@@ -272,14 +336,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnimals)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUpID;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DataGridView dgvAnimals;
@@ -302,6 +367,12 @@
         private System.Windows.Forms.Label lblSpecies;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblAnimalID;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txtNewValue;
+        private System.Windows.Forms.TextBox txtOldValue;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
 
