@@ -57,6 +57,8 @@
             this.txtOldValue = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnSummery = new System.Windows.Forms.Button();
+            this.lblDSummery = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnimals)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -320,11 +322,32 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "Change Value:";
             // 
+            // btnSummery
+            // 
+            this.btnSummery.Location = new System.Drawing.Point(483, 264);
+            this.btnSummery.Name = "btnSummery";
+            this.btnSummery.Size = new System.Drawing.Size(133, 23);
+            this.btnSummery.TabIndex = 20;
+            this.btnSummery.Text = "Generate Summery";
+            this.btnSummery.UseVisualStyleBackColor = true;
+            this.btnSummery.Click += new System.EventHandler(this.btnSummery_Click);
+            // 
+            // lblDSummery
+            // 
+            this.lblDSummery.AutoSize = true;
+            this.lblDSummery.Location = new System.Drawing.Point(492, 334);
+            this.lblDSummery.Name = "lblDSummery";
+            this.lblDSummery.Size = new System.Drawing.Size(35, 13);
+            this.lblDSummery.TabIndex = 21;
+            this.lblDSummery.Text = "label4";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1078, 450);
+            this.ClientSize = new System.Drawing.Size(1078, 561);
+            this.Controls.Add(this.lblDSummery);
+            this.Controls.Add(this.btnSummery);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -340,6 +363,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -374,6 +398,8 @@
         private System.Windows.Forms.TextBox txtOldValue;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnSummery;
+        private System.Windows.Forms.Label lblDSummery;
     }
 }
 

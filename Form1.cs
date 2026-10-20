@@ -175,6 +175,35 @@ namespace ProjectPRG272Final1
             {
                 MessageBox.Show("Please select an animal to delete.");
             }
+            FileHandler fh = new FileHandler();
+            List<Animals> animal = fh.readAnimals();
+
+            dgvAnimals.AutoGenerateColumns = false;
+            dgvAnimals.DataSource = animal;
+        }
+
+        private void btnSummery_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FileHandler handler = new FileHandler();
+
+                SummeryReport finalReport = handler.GenerateSummeryReport();
+
+                lblDSummery.Text = $"Total Animals:                      {finalReport.TotalAnimals}\n" +
+                    $"Average Age (Years):          {finalReport.AverageAge}\n" +
+                    $"Average Recovery Score:   {finalReport.AverageRecoveryScore}\n"+
+                    "--------------------------------\n" +
+                    "Critical:                                 " + finalReport.StatusCounts["Critical"].ToString() + "\n" +
+                    "Serious:                               " + finalReport.StatusCounts["Serious"].ToString()+ "\n" +
+                    "Stable:                                 " + finalReport.StatusCounts["Stable"].ToString()+ "\n" +
+                    "Recovering:                         " + finalReport.StatusCounts["Recovering"].ToString()+ "\n" +
+                    "Release-Ready:                   " + finalReport.StatusCounts["Release-Ready"].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Could not execute background process: " + ex.Message);
+            }
         }
     }
 }

@@ -23,7 +23,7 @@ namespace PRG272Group5PM.DataLayer
             if (!File.Exists(path))
             {
                 // Create the file if it doesn't exist
-                using (FileStream fs = File.Create(path));
+                using (FileStream fs = File.Create(path)) ;
             }
             // Append the new record to the file
             using (StreamWriter sw = new StreamWriter(path, append: true))
@@ -79,7 +79,7 @@ namespace PRG272Group5PM.DataLayer
 
             if (recordRemoved)
             {
-                File.WriteAllLines(path, lineToRemove);   
+                File.WriteAllLines(path, lineToRemove);
             }
             else
             {
@@ -171,5 +171,8 @@ namespace PRG272Group5PM.DataLayer
 
 
         }
+        
+
+       
     }
 }
