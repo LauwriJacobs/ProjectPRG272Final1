@@ -52,6 +52,7 @@ namespace PRG272Group5PM.DataLayer
             return animal;
         }
 
+        // Method to generate a summary report based on the animal records in the file
         public SummeryReport GenerateSummeryReport()
         {
 
@@ -83,7 +84,7 @@ namespace PRG272Group5PM.DataLayer
 
                         if (parts.Length >= 7)
                         {
-                            if (int.TryParse(parts[3], out int age) && int.TryParse(parts[4], out int score))
+                            if (int.TryParse(parts[3], out int age) && int.TryParse(parts[4], out int score)) //out string. Outputs value into the variables
                             {
                                 totalAnimals++;
                                 totalAge += age;
