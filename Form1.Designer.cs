@@ -53,10 +53,10 @@
             this.lblAnimalID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtOldValue = new System.Windows.Forms.TextBox();
             this.txtNewValue = new System.Windows.Forms.TextBox();
+            this.txtOldValue = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnimals)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -64,7 +64,7 @@
             // 
             // txtUpID
             // 
-            this.txtUpID.Location = new System.Drawing.Point(75, 19);
+            this.txtUpID.Location = new System.Drawing.Point(85, 19);
             this.txtUpID.Name = "txtUpID";
             this.txtUpID.Size = new System.Drawing.Size(100, 20);
             this.txtUpID.TabIndex = 17;
@@ -77,6 +77,7 @@
             this.btnDelete.TabIndex = 16;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -230,7 +231,7 @@
             // lblAge
             // 
             this.lblAge.AutoSize = true;
-            this.lblAge.Location = new System.Drawing.Point(21, 136);
+            this.lblAge.Location = new System.Drawing.Point(59, 136);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(29, 13);
             this.lblAge.TabIndex = 3;
@@ -239,7 +240,7 @@
             // lblSpecies
             // 
             this.lblSpecies.AutoSize = true;
-            this.lblSpecies.Location = new System.Drawing.Point(21, 101);
+            this.lblSpecies.Location = new System.Drawing.Point(40, 101);
             this.lblSpecies.Name = "lblSpecies";
             this.lblSpecies.Size = new System.Drawing.Size(48, 13);
             this.lblSpecies.TabIndex = 2;
@@ -248,7 +249,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(21, 67);
+            this.lblName.Location = new System.Drawing.Point(50, 67);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(38, 13);
             this.lblName.TabIndex = 1;
@@ -257,7 +258,7 @@
             // lblAnimalID
             // 
             this.lblAnimalID.AutoSize = true;
-            this.lblAnimalID.Location = new System.Drawing.Point(21, 35);
+            this.lblAnimalID.Location = new System.Drawing.Point(33, 38);
             this.lblAnimalID.Name = "lblAnimalID";
             this.lblAnimalID.Size = new System.Drawing.Size(55, 13);
             this.lblAnimalID.TabIndex = 0;
@@ -266,7 +267,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 22);
+            this.label1.Location = new System.Drawing.Point(27, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 18;
@@ -280,44 +281,44 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtUpID);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(144, 334);
+            this.groupBox2.Location = new System.Drawing.Point(121, 334);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 100);
+            this.groupBox2.Size = new System.Drawing.Size(223, 100);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Update";
             // 
-            // label2
+            // txtNewValue
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Change:";
+            this.txtNewValue.Location = new System.Drawing.Point(85, 72);
+            this.txtNewValue.Name = "txtNewValue";
+            this.txtNewValue.Size = new System.Drawing.Size(100, 20);
+            this.txtNewValue.TabIndex = 22;
+            // 
+            // txtOldValue
+            // 
+            this.txtOldValue.Location = new System.Drawing.Point(85, 47);
+            this.txtOldValue.Name = "txtOldValue";
+            this.txtOldValue.Size = new System.Drawing.Size(100, 20);
+            this.txtOldValue.TabIndex = 21;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 75);
+            this.label3.Location = new System.Drawing.Point(52, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(23, 13);
             this.label3.TabIndex = 20;
             this.label3.Text = "To:";
             // 
-            // txtOldValue
+            // label2
             // 
-            this.txtOldValue.Location = new System.Drawing.Point(75, 47);
-            this.txtOldValue.Name = "txtOldValue";
-            this.txtOldValue.Size = new System.Drawing.Size(100, 20);
-            this.txtOldValue.TabIndex = 21;
-            // 
-            // txtNewValue
-            // 
-            this.txtNewValue.Location = new System.Drawing.Point(75, 72);
-            this.txtNewValue.Name = "txtNewValue";
-            this.txtNewValue.Size = new System.Drawing.Size(100, 20);
-            this.txtNewValue.TabIndex = 22;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(2, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 13);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Change Value:";
             // 
             // Form1
             // 
