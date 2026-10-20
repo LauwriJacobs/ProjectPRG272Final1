@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animals.cs" />
+    <Compile Include="buildlayer\Animals.cs" />
     <Compile Include="buildlayer\Calculations.cs" />
     <Compile Include="datalayer\DataHandler.cs" />
     <Compile Include="datalayer\FileHandler.cs" />
@@ -58,6 +58,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="buildlayer\SummeryReport.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
