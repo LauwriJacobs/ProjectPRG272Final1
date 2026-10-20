@@ -335,11 +335,11 @@
             // lblDSummery
             // 
             this.lblDSummery.AutoSize = true;
-            this.lblDSummery.Location = new System.Drawing.Point(492, 334);
+            this.lblDSummery.Location = new System.Drawing.Point(490, 334);
             this.lblDSummery.Name = "lblDSummery";
-            this.lblDSummery.Size = new System.Drawing.Size(35, 13);
+            this.lblDSummery.Size = new System.Drawing.Size(10, 13);
             this.lblDSummery.TabIndex = 21;
-            this.lblDSummery.Text = "label4";
+            this.lblDSummery.Text = ".";
             // 
             // Form1
             // 
