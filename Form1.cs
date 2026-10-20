@@ -110,7 +110,8 @@ namespace ProjectPRG272Final1
             string oldValue = txtOldValue.Text.Trim();
             string newValue = txtNewValue.Text.Trim();
 
-            if(string.IsNullOrWhiteSpace(animalID) || string.IsNullOrWhiteSpace(oldValue) || string.IsNullOrWhiteSpace(newValue))
+            // Validate input fields
+            if (string.IsNullOrWhiteSpace(animalID) || string.IsNullOrWhiteSpace(oldValue) || string.IsNullOrWhiteSpace(newValue))
             {
                 MessageBox.Show("Please enter all details");
                 return;
