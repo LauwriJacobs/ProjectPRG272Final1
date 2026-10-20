@@ -9,8 +9,9 @@ namespace PRG272Group5PM.DataLayer
 {
     internal class FileHandler
     {
+        
         private string path = @"animal.txt";
-
+        // Method to read animal records from the file and return a list of Animals objects
         public List<Animals> readAnimals()
         {
             List<Animals> animal = new List<Animals>();

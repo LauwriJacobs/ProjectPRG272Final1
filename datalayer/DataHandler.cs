@@ -13,8 +13,11 @@ namespace PRG272Group5PM.DataLayer
 {
     class DataHandler
     {
+
+        // Path to the animal data file
         public string path = @"animal.txt";
 
+        // Method to add a new animal record to the file
         public void AddAnimal(string animalid, string name, string species, string age, int recovscore, string status, string HU)
         {
             if (!File.Exists(path))
@@ -32,6 +35,8 @@ namespace PRG272Group5PM.DataLayer
             MessageBox.Show("Data has been saved");
         }
 
+
+        // Method to update an existing animal record in the file
         public void UpdateAnimal(string animalid, string change, string newValue)
         {
 
@@ -51,28 +56,39 @@ namespace PRG272Group5PM.DataLayer
             MessageBox.Show("Animal not found");
         }
 
+        // Method to delete an animal record from the file
         public void DeleteAnimal(string animalid)
         {
-            string[] lines = File.ReadAllLines(path);
+            List<string> lineToRemove = File.ReadAllLines(path).ToList();
+            bool recordRemoved = false;
 
-            for (int i = 0; i < lines.Length; i++)
+            for (int i = lineToRemove.Count() - 1; i >= 0; i--)
             {
-                if (lines[i].Contains(animalid))
+                if (string.IsNullOrWhiteSpace(lineToRemove[i])) continue;
+
+                string[] part = lineToRemove[i].Split('|');
+
+                if (part.Length > 0 && part[0].Trim() == animalid.Trim())
                 {
-                    lines[i] = null;
-                    File.WriteAllLines(path, lines.Where(l => l != null).ToArray());
-                    MessageBox.Show("Data has been deleted");
-                    return;
+                    lineToRemove.RemoveAt(i);
+                    recordRemoved = true;
+                    break;
                 }
-                else
-                {
-                    MessageBox.Show("Animal not found");
-                }
+
+            }
+
+            if (recordRemoved)
+            {
+                File.WriteAllLines(path, lineToRemove);   
+            }
+            else
+            {
+                throw new Exception("Animal not found");
             }
 
         }
 
-
+        // Method to detect and update recovery status and housing based on recovery score
         public void DetectRS()
         {
             string[] lines = File.ReadAllLines(path);
