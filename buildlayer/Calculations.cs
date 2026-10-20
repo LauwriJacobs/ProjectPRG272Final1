@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace PRG272Group5PM.BuildLayer
 {
+    // This class is responsible for calculating the status and housing of an animal based on its recovery score.
     internal class Calculations
     {
         string status;

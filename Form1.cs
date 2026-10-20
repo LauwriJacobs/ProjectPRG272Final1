@@ -20,6 +20,7 @@ namespace ProjectPRG272Final1
             InitializeComponent();
         }
 
+        //Button for adding an animal to the list
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtAnimalID.Text) || string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtSpecies.Text) ||
@@ -91,6 +92,7 @@ namespace ProjectPRG272Final1
             }
         }
 
+        //Loads data to dgvAnimals when the form is loaded
         private void Form1_Load(object sender, EventArgs e)
         {
             FileHandler fh = new FileHandler();
@@ -100,6 +102,7 @@ namespace ProjectPRG272Final1
             dgvAnimals.DataSource = animal;
         }
 
+        //Button for updating an animal in the list
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             DataHandler handler = new DataHandler();
@@ -132,9 +135,46 @@ namespace ProjectPRG272Final1
             
         }
 
+        //Button for deleting an animal from the list
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (dgvAnimals.SelectedRows.Count > 0)
+            {
 
+                DialogResult confirm = MessageBox.Show(
+                    "Are you sure you want to delete the selected animal?",
+                    "Confirm Delete",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (confirm == DialogResult.Yes)
+                {
+                    try
+                    {
+                        DataGridViewRow selectedRow = dgvAnimals.SelectedRows[0];
+
+                        string selectedAnimalID = selectedRow.Cells[0].Value.ToString();
+
+                        DataHandler handler = new DataHandler();
+                        handler.DeleteAnimal(selectedAnimalID);
+
+                        dgvAnimals.Rows.Remove(selectedRow);
+
+                        
+
+                        MessageBox.Show("Animal deleted successfully.");
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error deleting animal: " + ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select an animal to delete.");
+            }
         }
     }
 }
